@@ -41,7 +41,7 @@ ssh –i <pem_filepath> ubuntu@<public_ip>
  - Install Java and verify installation using the following commands.
 ```bash
 sudo apt update
-sudo apt-get install default-jdk
+sudo apt install openjdk-11-jdk
 java -version
 ```
  - Set up the `JAVA_HOME` environment variable.
