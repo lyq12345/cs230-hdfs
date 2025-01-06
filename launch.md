@@ -143,7 +143,7 @@ export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 ```
  - Check the status of Hadoop cluster by entering `<public-ip-of-master>:9870` in your browser. If you reach a web page with “Namenode Information” you have started Hadoop successfully. You should have 3 live nodes listed.
    - **Note:** For the default network security setting of AWS instance, this port is not accessible. 
-   - To allow access, go to the `AWS Console` -> `EC2 instances` -> Click `Master` instance -> `Security` -> Click the security group link -> `Edit inbound rules` -> `Add rule` -> `Type = Custom TCP`, `Port range = 9870`, `Source = My IP` -> `Save rules`.
+   - To allow access, go to the `AWS Console` -> `EC2 instances` -> Click `Master` instance -> `Security` -> Click the security group link -> `Edit inbound rules` -> `Add rule` -> `Type = Custom TCP`, `Port range = 9870`, `Source = 0.0.0.0/0` -> `Save rules`.
  - To use HDFS: On `Master` node, run the following command in `<HadoopInstallationFolder>/bin/` folder
 ```bash
 ./hadoop fs -help
