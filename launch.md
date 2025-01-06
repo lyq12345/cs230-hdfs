@@ -73,6 +73,8 @@ cat .ssh/id_rsa.pub
  - Copy and append all 3 public keys to all 3 instances' `.ssh/authorized_keys` file.
  - Verify that you can ssh login in all the following directions without password.
 
+Test the password-less SSH. **Note: You can use `exit` after each ssh command to return to the previous session.**
+
 On `Master` run the following,
 ```bash
 # From Master to Master
@@ -127,7 +129,7 @@ tar -zxvf hadoop-3.3.6.tar.gz
 </property>
 ```
  - On `Master` node only: Clear contents of the file `<HadoopInstallationFolder>/etc/hadoop/workers` and add the private ips of all 3 nodes (including master). This step gives the list of all the machines who can be workers for Hadoop cluster.
- - On all 3 nodes: Set `JAVA_HOME` in `<HadoopInstallationFolder>/etc/hadoop/hadoop-env.sh`
+ - On all 3 nodes: Set `JAVA_HOME` in `<HadoopInstallationFolder>/etc/hadoop/hadoop-env.sh` (jump to line 54, or just append at the end of the file)
 ```bash
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 ```
