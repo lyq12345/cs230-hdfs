@@ -38,10 +38,10 @@ ssh –i <pem_filepath> ubuntu@<public_ip>
 
 ## Step 3 Java Installation
 (On all 3 instances)
- - Install Java and verify installation using the following commands.
+ - Install Java and verify installation using the following commands(We're using openjdk 11 as an example. If you prefer other versions, you need to change the dir for `JAVA_HOME` as well).
 ```bash
 sudo apt update
-sudo apt-get install default-jdk
+sudo apt install openjdk-11-jdk
 java -version
 ```
  - Set up the `JAVA_HOME` environment variable.
@@ -73,7 +73,7 @@ cat .ssh/id_rsa.pub
  - Copy and append all 3 public keys to all 3 instances' `.ssh/authorized_keys` file.
  - Verify that you can ssh login in all the following directions without password.
 
-On `Master` run the following,
+On `Master` run the following (**use `exit` to return to the previous terminal status after EACH command!**),
 ```bash
 # From Master to Master
 ssh <public-ip-of-master>
